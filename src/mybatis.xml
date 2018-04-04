@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- 配置数据库连接信息 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<!-- 注意3306后面是数据库名称 autoReconnect自动重连 -->
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/vincent?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;autoReconnect=true" />
+				<property name="username" value="root" />
+				<property name="password" value="qwe13752" />
+				
+				<!-- 解决数据库8小时没有连接就断线的问题 -->
+				<property name="poolPingEnabled" value="true"/>
+
+                <property name="poolPingQuery" value="select now()"/>
+
+                <property name="poolPingConnectionsNotUsedFor" value="3600000"/>
+				
+
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/vincent/julie/dao/UserMapping.xml" />
+		<mapper resource="com/vincent/julie/dao/MemoMapping.xml" />
+		<mapper resource="com/vincent/julie/dao/VersionMapping.xml"/>
+		<mapper resource="com/vincent/julie/dao/FeedbackMapping.xml"/>
+	</mappers>
+
+
+
+</configuration>

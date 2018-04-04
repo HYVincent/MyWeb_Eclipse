@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vincent.julie.dao.FeedbackMapping">
+
+	<!-- 添加一条反馈或者是bug -->
+	<insert id="addFeedback" parameterType="java.util.Map">
+		insert into feedback(user_id,feedback_title,feedback_type,feedback_content,feedback_time) 
+			value
+		(
+		#{user_id},
+		#{feedback_title},
+		#{feedback_type},
+		#{feedback_content},
+		#{feedback_time}
+		)
+	</insert>
+	<!-- 查询所有的反馈或者bug列表 -->
+	<select id="selectAllFeedback" parameterType="java.lang.Integer" resultType="com.vincent.julie.bean.FeedbackBean">
+		select * from feedback where user_id = #{user_id}
+	</select>
+
+</mapper>

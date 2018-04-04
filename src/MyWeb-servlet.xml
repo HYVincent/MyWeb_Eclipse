@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<!-- 开启SpringMVC注解 -->
+	<context:component-scan base-package="com.vincent.julie" />
+	<mvc:annotation-driven />
+
+	<!-- <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			不需要拦截的方法
+			<mvc:exclude-mapping path="/user/register" />
+			<mvc:exclude-mapping path="/user/login"/>
+			<mvc:exclude-mapping path="/user/resetPassword"/>
+			<mvc:exclude-mapping path="/version/addNewVersion"/>
+			
+			<bean class="com.vincent.julie.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors> -->
+	
+	<!-- <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">  
+            <list>  
+                <ref bean="byteArray_hmc" />  
+                <ref bean="string_hmc" />  
+                <ref bean="resource_hmc" />  
+                <ref bean="source_hmc" />  
+                <ref bean="xmlAwareForm_hmc" />  
+                <ref bean="jaxb2RootElement_hmc" />  
+                <ref bean="jackson_hmc" />  
+            </list>  
+        </property>
+    </bean>  
+    <bean id="byteArray_hmc" class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+    <bean id="string_hmc" class="org.springframework.http.converter.StringHttpMessageConverter" >
+    	<property name="supportedMediaTypes">
+			<list>
+				<value>text/plain;charset=utf-8</value>
+				<value>text/html;charset=utf-8</value>
+			</list>
+		</property>
+    </bean>
+    
+    <bean id="resource_hmc" class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+    <bean id="source_hmc" class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+    <bean id="xmlAwareForm_hmc" class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" />
+    <bean id="jaxb2RootElement_hmc" class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+    <bean id="jackson_hmc" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" /> -->
+</beans>
