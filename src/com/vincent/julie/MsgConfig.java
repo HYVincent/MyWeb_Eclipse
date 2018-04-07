@@ -31,6 +31,17 @@ public class MsgConfig {
 	 */
 	public static final String COMMON_USER_LOGIN_STATUS_EXCEPTION = "登陆状态异常,请重新登陆";
 	
+	/**
+	 * 文件上传失败
+	 */
+	public static final String COMMON_FILE_UPLOAD_FAIL = "文件上传失败";
+	/**
+	 * 文件上传成功
+	 */
+	public static final String COMMON_FILE_UPLOAD_SUCCESS = "文件上传成功";
+	
+	
+	
 	/*
 	 * 注册成功
 	 */
